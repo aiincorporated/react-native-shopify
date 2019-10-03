@@ -9,7 +9,7 @@ export default {
   ...RNShopify,
   getProducts: (page = 1, collectionId, tags) => {
     if (collectionId) {
-      return RNShopify.getProductsWithTagsForCollection(page, collectionId, tags);
+      return RNShopify.getProductsWithTagsForCollection(page, collectionId.toString(), tags);
     }
     return tags ? RNShopify.getProductsWithTags(page, tags) : RNShopify.getProductsPage(page);
   },
